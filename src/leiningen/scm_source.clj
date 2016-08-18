@@ -2,7 +2,8 @@
   (:require [clojure.java.shell :as sh]
             [clojure.string :as string]
             [clojure.data.json :as json]
-            [clojure.java.io :as io]))
+            [clojure.java.io :as io]
+            [leiningen.core.main :as main]))
 
 (defn exec
   "Execute a shell command and return its output. Throws an exception on error."
@@ -15,7 +16,8 @@
 (defn- write [target-path content]
   (let [f (io/file target-path "scm-source.json")]
     (io/make-parents f)
-    (spit f content)))
+    (spit f content)
+    (main/info "Wrote" (.getCanonicalPath f))))
 
 (defn scm-source
   "Generates the 'scm-source.json' according to the STUPS documentation."
