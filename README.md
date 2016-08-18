@@ -7,7 +7,7 @@ A Leiningen plugin to generate a `scm-source.json` file according to the [STUPS 
 
 ## Usage
 
-Put `[org.zalando.stups/lein-scm-source "0.1.0-SNAPSHOT"]` into the `:plugins` vector of your project.clj.
+Put `[org.zalando.stups/lein-scm-source "0.3.0"]` into the `:plugins` vector of your project.clj.
 
     $ lein scm-source
 
